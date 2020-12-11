@@ -2,6 +2,8 @@
 
 本工程是《21个项目玩转深度学习———基于TensorFlow的实践详解》的配套代码，代码推荐的运行环境为：Ubuntu 14.04，Python 2.7、TensorFlow >= 1.4.0。请尽量使用类UNIX系统和Python 2运行本书的代码。
 
+N2020-12-11备注：在win下，tensorflow-gpu最低版需要python3.5，但是安装后一直会报错。最后在安装了python3.7，以及对应的tensorflow-gpu1.13.1，程序运行没有报错.
+
 欢迎有兴趣的同学猛戳下面的链接购买：
 - 京东：[https://item.jd.com/12327358.html](https://item.jd.com/12327358.html)
 - 天猫：[https://detail.tmall.com/item.htm?id=566399074299](https://detail.tmall.com/item.htm?id=566399074299)
