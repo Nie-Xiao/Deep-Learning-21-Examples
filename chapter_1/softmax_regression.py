@@ -47,9 +47,9 @@ for _ in range(1000):
     # 在Session中运行train_step，运行时要传入占位符的值
     sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
-# 正确的预测结果
+# 正确的预测结果，形式为[True,False,Fasle...]
 correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
-# 计算预测准确率，它们都是Tensor
+# 计算预测准确率，它们都是Tensor，转化后形式为[1,0,0,0...]
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 # 在Session中运行Tensor可以得到Tensor的值
 # 这里是获取最终模型的正确率
