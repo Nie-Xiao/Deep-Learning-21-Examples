@@ -4,10 +4,6 @@
 
 N2020-12-11备注：在win下，tensorflow-gpu最低版需要python3.5，但是安装后一直会报错。最后在安装了python3.7，以及对应的tensorflow-gpu1.13.1，程序运行没有报错.
 
-欢迎有兴趣的同学猛戳下面的链接购买：
-- 京东：[https://item.jd.com/12327358.html](https://item.jd.com/12327358.html)
-- 天猫：[https://detail.tmall.com/item.htm?id=566399074299](https://detail.tmall.com/item.htm?id=566399074299)
-- 当当：[http://product.dangdang.com/25245282.html](http://product.dangdang.com/25245282.html)
 
 写作这本书的初衷是希望提供一个**深度学习实践案例的合集**，让每个人都可以在“动手实验”的过程中，比较轻松地掌握深度学习和TensorFlow的使用技巧，并且能完整地做出一些有意思的项目。**希望大家能在实践的过程中找到乐趣，如果有任何问题，欢迎通过[issues](https://github.com/hzy46/Deep-Learning-21-Examples/issues)提出纠错或改进建议。**
 
