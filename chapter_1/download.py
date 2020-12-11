@@ -1,5 +1,6 @@
 # coding:utf-8
-# 从tensorflow.examples.tutorials.mnist引入模块。这是TensorFlow为了教学MNIST而提前编制的程序
+# 从tensorflow.examples.tutorials.mnist引入模块。这是TensorFlow为了教学MNIST而提前编制的程序，
+#备注，gpu版本中没有turtorials文件夹，只在cpu版本中存在。所以这个.py文件的解释器更换为cup版的
 from tensorflow.examples.tutorials.mnist import input_data
 # 从MNIST_data/中读取MNIST数据。这条语句在数据不存在时，会自动执行下载
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
