@@ -12,7 +12,15 @@ def inputs_origin(data_dir):
   # 读入的都是训练图像
   filenames = [os.path.join(data_dir, 'data_batch_%d.bin' % i)
                for i in xrange(1, 6)]
-  # 判断文件是否存在
+  # 判断文件是否存在 
+  """
+  if not tf.gfile.Exists(dest_directory):
+     gfile.MakeDirs(dest_directory)
+  与下述功能相同
+  if not os.path.exists(dest_directory):
+     os.makedirs(dest_directory)
+  """
+  
   for f in filenames:
     if not tf.gfile.Exists(f):
       raise ValueError('Failed to find file: ' + f)
