@@ -24,6 +24,6 @@ with tf.Session() as sess:
         i += 1
         # 获取图片数据并保存
         image_data = sess.run(value)
-        with open('read/test_%d.jpg' % i, 'wb') as f:
+        with open('test_%d.jpg' % i, 'wb') as f:
             f.write(image_data)
 # 程序最后会抛出一个OutOfRangeError，这是epoch跑完，队列关闭的标志
