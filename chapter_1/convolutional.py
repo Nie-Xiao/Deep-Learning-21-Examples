@@ -4,6 +4,8 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 
 def weight_variable(shape):
+    # 从截断的正态分布中输出随机值
+    # 生成的值服从具有指定平均值和标准偏差的正态分布，如果生成的值大于平均值2个标准偏差的值则丢弃重新选择
     initial = tf.truncated_normal(shape, stddev=0.1)
     return tf.Variable(initial)
 
@@ -29,7 +31,11 @@ if __name__ == '__main__':
     x = tf.placeholder(tf.float32, [None, 784])
     y_ = tf.placeholder(tf.float32, [None, 10])
 
-    # 将单张图片从784维向量重新还原为28x28的矩阵图片
+    # 此处使用了卷积，输入由以前的向量调整为图像，故需将单张图片从784维向量重新还原为28x28的矩阵图片
+    """
+    x_image = tf.reshape(x, [-1, 28, 28, 1])这里是将一组图像矩阵x重建为新的矩阵，该新矩阵的维数为（a，28，28，1），其中-1表示a由实际情况来定。 
+   例如，x是一组图像的矩阵（假设是50张，大小为56×56），则执行x_image = tf.reshape(x, [-1, 28, 28, 1])可以计算a=50×56×56/28/28/1=200。即x_image的维数为（200，28，28，1）。
+    """
     x_image = tf.reshape(x, [-1, 28, 28, 1])
 
     # 第一层卷积层
@@ -50,6 +56,8 @@ if __name__ == '__main__':
     h_pool2_flat = tf.reshape(h_pool2, [-1, 7 * 7 * 64])
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
     # 使用Dropout，keep_prob是一个占位符，训练时为0.5，测试时为1
+    # 在全连接层加入了Dropout，它是防止神经网路过拟合的一种手段，在每一步训练以一定概率去掉网络中的某些连接，只在当前步骤中随机进行去除
+    # 0.5表示在训练时每一个连接都有50%的概率被去除，而在测试时保留所有连接
     keep_prob = tf.placeholder(tf.float32)
     h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
