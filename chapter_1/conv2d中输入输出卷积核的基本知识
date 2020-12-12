@@ -1,3 +1,5 @@
+# 以下文章从博客https://www.cnblogs.com/welhzh/p/6607581.html处粘贴过来，原文更加经常明白的说明了这一基本知识。
+
 tf.nn.conv2d是TensorFlow里面实现卷积的函数，参考文档对它的介绍并不是很详细，实际上这是搭建卷积神经网络比较核心的一个方法，非常重要
 
 tf.nn.conv2d(input, filter, strides, padding, use_cudnn_on_gpu=None, name=None)
